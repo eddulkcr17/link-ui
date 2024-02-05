@@ -1,1 +1,70 @@
-<p>add-product works!</p>
+
+<div>
+  <div class="submit-form">
+    <h2>CREAR PRODUCTO</h2>
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="title">MFGR</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        required
+        [(ngModel)]="product.mfgr"
+        name="title"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Nombre producto</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="product.prodtName"
+        name="description"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="description">modelo</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="product.model"
+        name="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Stock</label>
+      <input
+        class="form-control"
+        type="number"
+        id="description"
+        required
+        [(ngModel)]="product.unitInStock"
+        name="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">precio unitario</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="product.unitListPrice"
+        name="description"
+      />
+    </div>
+
+
+
+    <button (click)="saveProduct()" class="btn btn-success">Enviar</button>
+    } @else {
+    <h4>producto creado correctamente!</h4>
+    <button class="btn btn-success" (click)="newProduct()">Crear</button>
+    }
+  </div>
+</div>
